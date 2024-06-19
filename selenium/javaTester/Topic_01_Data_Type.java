@@ -12,7 +12,7 @@ public class Topic_01_Data_Type {
      *          logic: boolean
      * II: tham chieu reference type
      *          String - chuoi ki tu
-     *          Class
+     *          Class : By, FirefoxDriver, Select, Topic_01_Da_Type
      *          Object
      *          Array
      *          collection
