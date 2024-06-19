@@ -56,5 +56,11 @@ public class Topic_02_And_Or {
          * //input[not(@type='hidden')]
          */
 
+        /**
+         * //a[@class='product-image']/img[1]
+             (//a[@class='product-image']/img)[1]
+             (//a[@class='product-image']/img)[2]
+
+
     }
 }
