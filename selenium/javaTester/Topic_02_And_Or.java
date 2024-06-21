@@ -50,17 +50,17 @@ public class Topic_02_And_Or {
 
         //NOT
 
-        /**
-         * laty the input type k p textbox
-         * //input[not(@type='text')]
-         * //input[not(@type='hidden')]
-         */
-
-        /**
-         * //a[@class='product-image']/img[1]
-             (//a[@class='product-image']/img)[1]
-             (//a[@class='product-image']/img)[2]
-
-
+//        /**
+//         * laty the input type k p textbox
+//         * //input[not(@type='text')]
+//         * //input[not(@type='hidden')]
+//         */
+//
+//        /**
+//         * //a[@class='product-image']/img[1]
+//             (//a[@class='product-image']/img)[1]
+//             (//a[@class='product-image']/img)[2]
+//         */
+//
     }
 }
