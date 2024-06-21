@@ -7,11 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Topic_08_WebBrowser_Commands {
@@ -34,7 +36,7 @@ public class Topic_08_WebBrowser_Commands {
 
         driver.manage().window().maximize();
 
-        // ver 3/2/1
+        // ver 3/2/1nk find element thi k can dung
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         // ver 4
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -72,6 +74,32 @@ public class Topic_08_WebBrowser_Commands {
 
         // driver.findElements(By.xpath("")).click(); > sai do thao tac nhieu element thi k click dc
         // sua lai bo "s"
+
+        // bat dau bang "get" luon luon tra ve du lieu
+        // tai s can lay du lieu lam gi
+        // >> verify
+
+        String loginPageUrl = driver.getCurrentUrl();
+
+        // dung de lay ra url cua tab hien tai
+        driver.getCurrentUrl();
+        // lay ra page source, html, css cua page hien tai
+        // verify cach tuong doi
+        driver.getPageSource();
+        //
+        driver.getTitle();
+        //
+        driver.getWindowHandles();
+        //
+        driver.getWindowHandle();
+
+
+        // neu chi dung 1 lan > ko khai bao bien
+        Assert.assertEquals(driver.getCurrentUrl(),"https://www.facebook.com/");
+        // dung laij nhieu lan (it nhat 2 lan ) khai bao bien
+        Assert.assertEquals(loginPageUrl,"https://www.facebook.com/");
+
+        // Assert equal la tuyet doi
 
 
     }
