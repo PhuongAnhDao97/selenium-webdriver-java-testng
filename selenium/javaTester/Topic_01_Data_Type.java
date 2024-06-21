@@ -10,7 +10,7 @@ public class Topic_01_Data_Type {
      *          so thuc: float - double
      *          ki tu: char
      *          logic: boolean
-     * II: tham chieu reference type
+     * II: tham chieu reference type phai new moi dung dc
      *          String - chuoi ki tu
      *          Class : By, FirefoxDriver, Select, Topic_01_Da_Type
      *          Object
