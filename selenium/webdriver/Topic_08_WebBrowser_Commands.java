@@ -1,12 +1,12 @@
 package webdriver;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -83,15 +83,67 @@ public class Topic_08_WebBrowser_Commands {
 
         // dung de lay ra url cua tab hien tai
         driver.getCurrentUrl();
+
         // lay ra page source, html, css cua page hien tai
         // verify cach tuong doi
         driver.getPageSource();
-        //
+
+        // lay ra title cua page hien tai (tren tab)
         driver.getTitle();
-        //
+
+
+        //lay ra 1 id cua cua so/tab hien tai
+        // handle window/tab
         driver.getWindowHandles();
-        //
+
+
+        //lay ra het toan bo id cua cua so/tab hien tai
+        // handle window/tab
         driver.getWindowHandle();
+
+        // cookies - framework
+        driver.manage().getCookies();
+        // get ra nhung log o dev tool - framework
+        driver.manage().logs().get(LogType.DRIVER);
+        //apply find element
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
+
+        // cho cho 1 page dc load xong > thuong la k can
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+
+        // set trc khi dung vs thu vien javascriptExecutor
+        // Inject 1 doan code JS vao trong Browser / Element
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
+
+        // thuong la k dung
+        driver.manage().timeouts().getImplicitWaitTimeout(Duration.ofSeconds(30));
+
+        driver.manage().window().fullscreen();
+        driver.manage().window().maximize();
+        driver.manage().window().minimize();
+
+        // test responsive (resolution)
+        // test GUI
+        driver.manage().window().setSize(new Dimension(1366,768));
+        driver.manage().window().setSize(new Dimension(1920,1080));
+        driver.manage().window().setSize(new Dimension(2560,1440));
+
+        driver.manage().window().getSize();
+
+
+        // toa do man hinh, it dung
+        driver.manage().window().setPosition(new Point(0,0));
+        driver.manage().window().getPosition();
+
+        driver.navigate();
+
+        driver.switchTo();
+
+
+
+
+        //driver.
 
 
         // neu chi dung 1 lan > ko khai bao bien
@@ -99,7 +151,6 @@ public class Topic_08_WebBrowser_Commands {
         // dung laij nhieu lan (it nhat 2 lan ) khai bao bien
         Assert.assertEquals(loginPageUrl,"https://www.facebook.com/");
 
-        // Assert equal la tuyet doi
 
 
     }
