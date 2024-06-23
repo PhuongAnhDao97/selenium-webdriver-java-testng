@@ -21,7 +21,7 @@ public class Topic_05_Assert {
 
         // keiu du lieu nhan vao la boolean (true/ false)
         // khi mong muon Dk tra ve la dung thi dung assertTrue de verify 3 ham : asserTrue, assertfalse, assertequals
-        Assert.assertTrue();
+        //Assert.assertTrue();
 
         // Assert equal la tuyet doi
         // assertTrue contains la tuong doi

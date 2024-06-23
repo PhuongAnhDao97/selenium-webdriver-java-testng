@@ -12,8 +12,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class Topic_08_WebBrowser_Commands {
@@ -32,7 +35,7 @@ public class Topic_08_WebBrowser_Commands {
 
     @BeforeClass
     public void beforeClass() {
-        driver = new FirefoxDriver();
+        driver = new FirefoxDriver(); //**
 
         driver.manage().window().maximize();
 
@@ -43,16 +46,16 @@ public class Topic_08_WebBrowser_Commands {
     }
 
     @Test
-    public void TC_01_Command() {
+    public void TC_01_Command() throws MalformedURLException {
         //muon dung dc p khoi tao > neu k khoi tao > error NullPointerException
         // 1 bien chua khoi tao nhung dc sd
         driver = new FirefoxDriver();
-        driver.get("https://www.facebook.com/");
+        driver.get("https://www.facebook.com/"); //**
 
         // dong browser ko care bao nhieu tab
-        driver.quit();
+        driver.quit(); //**
         // close 1 tab dang active. neu co 1 tab dong browser
-        driver.close();
+        driver.close(); //*
 
         // 2 ham ben duoi bi anh huong boi implicitWait
         //findElements/ findElement dung de cho cho element dc tim thay
@@ -65,12 +68,12 @@ public class Topic_08_WebBrowser_Commands {
         // neu k tim thay bi fail tai step nay -throw exception NoSuchElementException
         // bien abc khai bao p co cung kieu du lieu tra ve
         // tra ve 1 element, neu nhu tim thay > 1 chi lay 1 va thao tac element dau tien
-        WebElement abc = driver.findElement(By.id(""));
+        WebElement abc = driver.findElement(By.id("")); //**
 
 
         // tra ve 1 list elements
         // ko tim thay thi k fail, ko throw gi ca, tra ve list rong 0 element
-        List<WebElement> checkboxes = driver.findElements(By.xpath("//input[@type='check-box"));
+        List<WebElement> checkboxes = driver.findElements(By.xpath("//input[@type='check-box")); //**
 
         // driver.findElements(By.xpath("")).click(); > sai do thao tac nhieu element thi k click dc
         // sua lai bo "s"
@@ -82,7 +85,7 @@ public class Topic_08_WebBrowser_Commands {
         String loginPageUrl = driver.getCurrentUrl();
 
         // dung de lay ra url cua tab hien tai
-        driver.getCurrentUrl();
+        driver.getCurrentUrl(); //*
 
         // lay ra page source, html, css cua page hien tai
         // verify cach tuong doi
@@ -94,19 +97,19 @@ public class Topic_08_WebBrowser_Commands {
 
         //lay ra 1 id cua cua so/tab hien tai
         // handle window/tab
-        driver.getWindowHandles();
+        driver.getWindowHandles(); //*
 
 
         //lay ra het toan bo id cua cua so/tab hien tai
         // handle window/tab
-        driver.getWindowHandle();
+        driver.getWindowHandle();//*
 
         // cookies - framework
-        driver.manage().getCookies();
+        driver.manage().getCookies(); //*
         // get ra nhung log o dev tool - framework
-        driver.manage().logs().get(LogType.DRIVER);
+        driver.manage().logs().get(LogType.DRIVER); //*
         //apply find element
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); //**
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
 
         // cho cho 1 page dc load xong > thuong la k can
@@ -117,10 +120,10 @@ public class Topic_08_WebBrowser_Commands {
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
 
         // thuong la k dung
-        driver.manage().timeouts().getImplicitWaitTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().getImplicitWaitTimeout();
 
         driver.manage().window().fullscreen();
-        driver.manage().window().maximize();
+        driver.manage().window().maximize(); //**
         driver.manage().window().minimize();
 
         // test responsive (resolution)
@@ -136,14 +139,48 @@ public class Topic_08_WebBrowser_Commands {
         driver.manage().window().setPosition(new Point(0,0));
         driver.manage().window().getPosition();
 
-        driver.navigate();
 
-        driver.switchTo();
+        // ham dung de dieu huong trang web
+        driver.navigate().back();
+        driver.navigate().refresh();
+        driver.navigate().forward();
+
+        // thao tac voi history cua page (back/forward...)
+        driver.navigate().to("https://www.facebook.com/");
+        driver.navigate().to(new URL("https://www.facebook.com/") );
+
+        // ko ho tro history
+        driver.get("");
+
+
+
+        // Alert / Window (Tab) / Frame (iFrame) //*
+        driver.switchTo().alert().accept();
+        driver.switchTo().alert().dismiss();
+        driver.switchTo().alert().getText();
+        driver.switchTo().alert().sendKeys("Test");
+
+        // truyen vao window id , lay tu ham handle //*
+        // hoc trong bai window va tab
+        String homePageWindowID = driver.getWindowHandle();
+        driver.switchTo().window(homePageWindowID);
+
+        Set<String> allWindowId =driver.getWindowHandles();
+
+
+        // handle frame iframe
+        // index / id (name)/ element
+        driver.switchTo().frame(0);
+        driver.switchTo().frame("3758273");
+        driver.switchTo().frame(driver.findElement(By.id("")));
+        // switch ve html chua frame trc do
+        driver.switchTo().defaultContent();
+        // tu frame trong di ra frame ngoai chua no
+        driver.switchTo().parentFrame();
 
 
 
 
-        //driver.
 
 
         // neu chi dung 1 lan > ko khai bao bien
