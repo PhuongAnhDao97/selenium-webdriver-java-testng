@@ -98,7 +98,7 @@ public class Topic_11_Default_Dropdown {
         Assert.assertEquals(driver.findElement(By.cssSelector("input#Email")).getAttribute("value"),emailAddress);
         Assert.assertEquals(driver.findElement(By.cssSelector("input#Company")).getAttribute("value"),companyName);
 
-
+        // dung isSelected de verify da chon
 
 
     }
