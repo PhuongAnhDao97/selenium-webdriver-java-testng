@@ -10,12 +10,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.awt.*;
 import java.time.Duration;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
-public class Topic_13_Button_Radio_Checkbox {
+public class Topic_13_Button {
     WebDriver driver;
 
     @BeforeClass
