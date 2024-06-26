@@ -125,11 +125,36 @@ public class Topic_14_Checkbox_Radio {
 //        JavascriptExecutor jsExcutor = (JavascriptExecutor) driver;
 //        jsExcutor.executeScript("");
 
+    }
 
-
-
+    @Test
+    public void TC_05_Ubuntu() {
+        driver.get("https://login.ubuntu.com/");
+        sleepInSeconds(2);
+        ((JavascriptExecutor)driver) .executeScript("arguments[0].click();",driver.findElement(By.cssSelector("input#id_new_user")));
+        ((JavascriptExecutor)driver) .executeScript("arguments[0].click();",driver.findElement(By.cssSelector("input#id_accept_tos")));
 
     }
+
+    @Test
+    public void TC_06_GGdocs() {
+        driver.get("https://docs.google.com/forms/d/e/1FAIpQLSfiypnd69zhuDkjKgqvpID9kwO29UCzeCVrGGtbNPZXQok0jA/viewform");
+
+        By canThoRadio = By.xpath("//div[@aria-label='Cần Thơ']");
+
+        // verify element is not selected
+        Assert.assertEquals(driver.findElement(canThoRadio).getAttribute("aria-checked"), "false");
+
+        Assert.assertTrue(driver.findElement(By.xpath("//div[@aria-label='Cần Thơ' and @aria-checked='false']")).isDisplayed());
+
+        driver.findElement(canThoRadio).click();
+        sleepInSeconds(2);
+
+        Assert.assertTrue(driver.findElement(By.xpath("//div[@aria-label='Cần Thơ' and @aria-checked='true']")).isDisplayed());
+
+    }
+
+
 
     @AfterClass
     public void afterClass() {
