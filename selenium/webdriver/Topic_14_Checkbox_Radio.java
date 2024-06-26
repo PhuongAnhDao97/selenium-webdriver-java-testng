@@ -149,7 +149,7 @@ public class Topic_14_Checkbox_Radio {
 
         driver.findElement(canThoRadio).click();
         sleepInSeconds(2);
-
+        // ko AssertFalse dc
         Assert.assertTrue(driver.findElement(By.xpath("//div[@aria-label='Cần Thơ' and @aria-checked='true']")).isDisplayed());
 
     }
