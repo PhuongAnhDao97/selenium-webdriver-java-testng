@@ -55,7 +55,6 @@ public class Topic_15_Alert {
         Assert.assertEquals(driver.findElement(resultText).getText(),"You clicked an alert successfully");
 
 
-
 //         thu vien alert k sd cho authen alert, lien quan den bao mat
 //        selenium 4 > chrom dev tool, chi dung cho chrom va edge
 //         cancel alert: apply cho confirm va prompt

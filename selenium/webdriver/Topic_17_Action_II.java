@@ -98,6 +98,30 @@ public class Topic_17_Action_II {
 
      }
 
+    @Test
+    public void TC_04_Right_Click()  {
+        driver.get("http://swisnl.github.io/jQuery-contextMenu/demo.html");
+
+        // right click
+        action.contextClick(driver.findElement(By.xpath("//span[text()='right click me']"))).perform();
+        // kiem tra quit menu hien thi
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.context-menu-icon-quit")).isDisplayed());
+        // hover
+        action.moveToElement(driver.findElement(By.cssSelector("li.context-menu-icon-quit"))).perform();
+
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.context-menu-icon-quit.context-menu-hover.context-menu-visible")).isDisplayed());
+
+        driver.findElement(By.cssSelector("li.context-menu-icon-quit.context-menu-hover.context-menu-visible")).click();
+
+        driver.switchTo().alert().accept();
+
+        Assert.assertFalse(driver.findElement(By.cssSelector("li.context-menu-icon-quit")).isDisplayed());
+
+
+    }
+
+
+
     @AfterClass
     public void afterClass() {
         driver.quit();
