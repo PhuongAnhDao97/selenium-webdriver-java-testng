@@ -1,6 +1,6 @@
 package javaTester;
 
-public class Topic_10_Scroll_To_View {
+public class Topic_10_Javascript_Executor {
     public static void main(String[] args) {
         // scroll toi element
         // ((JavascriptExecutor)driver).executeScript ("arguments[0].scrollIntoView();", element );
