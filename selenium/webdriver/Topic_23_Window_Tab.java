@@ -20,7 +20,7 @@ public class Topic_23_Window_Tab {
     public void beforeClass() {
 
         driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
     }
 
@@ -119,11 +119,36 @@ public class Topic_23_Window_Tab {
         closeAllWindowsWithoutParent(parentID);
         sleepInSeconds(2);
 
+        // selenium 3 muon new tab, window dung ctr N va Ctrl T
+
 
     }
 
     @Test
-    public void TC_03_() {
+    public void TC_03_Dictionary() {
+        driver.get("https://dictionary.cambridge.org");
+
+        driver.findElement(By.xpath("//header[@id='header']//span[text()='Log in']")).click();
+
+        switchToWindowByTitle("Login");
+
+        driver.findElement(By.cssSelector("input[value='Log in']")).click();
+
+        Assert.assertEquals(driver.findElement(By.xpath("//span[@data-bound-to='loginID' and text()='This field is required']")).getText(),"This field is required");
+        Assert.assertEquals(driver.findElement(By.xpath("//span[@data-bound-to='password' and text()='This field is required']")).getText(),"This field is required");
+
+        driver.close();
+
+        switchToWindowByTitle("Cambridge Dictionary | English Dictionary, Translations & Thesaurus");
+
+        driver.findElement(By.cssSelector("input#searchword")).sendKeys("Can");
+        sleepInSeconds(2);
+        driver.findElement(By.cssSelector("button[aria-label='Search']")).click();
+        sleepInSeconds(2);
+
+        Assert.assertEquals(driver.findElement(By.xpath("//h1/b")).getText(),"can");
+
+
     }
 
     @AfterClass
