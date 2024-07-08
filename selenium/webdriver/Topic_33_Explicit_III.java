@@ -46,6 +46,7 @@ public class Topic_33_Explicit_III {
 
         driver.findElement(By.xpath("//a[text()='12']")).click();
 
+        // wait cho icon loading bien mat
         explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div[id*='RadCalendar1']>div.raDiv")));
 
         Assert.assertEquals(driver.findElement(selectedDateBy).getText(),"Friday, July 12, 2024");
