@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="UI Mobile and Web" verbose="1" >
+    
+    <listeners>
+        <listener class-name="listeners.ExtentReport"></listener>
+    </listeners>
+    <suite-files>
+        <suite-file path="RunUIMobileAutomation.xml"></suite-file>
+        <suite-file path="RunUIWebAutomation.xml"></suite-file>
+    </suite-files>
+
+</suite>

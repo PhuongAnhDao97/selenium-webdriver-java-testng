@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="UI Mobile Automation" verbose="1" parallel="methods" thread-count="6">
+    <test name="Run on Firefox Driver">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="version" value="120"></parameter>
+        <classes>
+            <class name="testng.Topic_09_Parameter"></class>
+        </classes>
+    </test>
+</suite>

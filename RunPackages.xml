@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="Selenium Parameter testNG" verbose="1" >
+
+    <test name="Run on Firefox Driver">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="version" value="120"></parameter>
+        <packages>
+            <package name="testng"></package>
+        </packages>
+    </test>
+
+</suite>
