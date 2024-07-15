@@ -23,17 +23,29 @@ public class Topic_06_Exercise {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhap thang: ");
-        int x = scanner.nextInt();
 
-        List<Integer> thang31ngay = List.of(1, 3, 5, 7, 8, 10, 12);
+        System.out.println("Nhap phep toan");
+        String math = scanner.nextLine();
 
-        if (thang31ngay.contains(x)) {
-            System.out.println("Thang "+x+" co 31 ngay");
-        } else if (x == 2) {
-            System.out.println("Thang co 28 hoac 29 ngay");
-        } else {
-            System.out.println("Thang co 30 ngay");
+        System.out.println("Nhap a = ");
+        int a = scanner.nextInt();
+
+        System.out.println("Nhap b = ");
+        int b = scanner.nextInt();
+
+        switch (math) {
+            case "+":
+                System.out.println("Tong 2 so la :" + (a + b));
+                break;
+            case "-":
+                System.out.println("Hieu 2 so la :" + (a - b));
+                break;
+            case "*":
+                System.out.println("Tich 2 so la :" + (a * b));
+                break;
+            case "/":
+                System.out.println("Thuong 2 so la :" + (a / b));
+                break;
         }
 
     }

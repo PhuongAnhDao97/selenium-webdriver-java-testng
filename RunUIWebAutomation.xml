@@ -2,12 +2,25 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 
-<suite name="UI Web Automation" verbose="1" parallel="methods" thread-count="6">
+<suite name="UI Web Automation" verbose="1" >
         <test name="Run on Chrome Driver">
             <parameter name="browser" value="chrome"></parameter>
-            <parameter name="version" value="121"></parameter>
             <classes>
-                <class name="testng.Topic_09_Parameter"></class>
+                <class name="javaTester.Topic_07_Switch_Case"></class>
+            </classes>
+        </test>
+
+        <test name="Run on Edge Driver">
+            <parameter name="browser" value="edge"></parameter>
+            <classes>
+                <class name="javaTester.Topic_07_Switch_Case"></class>
+            </classes>
+        </test>
+
+        <test name="Run on Firefox Driver">
+            <parameter name="browser" value="firefox"></parameter>
+            <classes>
+                <class name="javaTester.Topic_07_Switch_Case"></class>
             </classes>
         </test>
 </suite>
