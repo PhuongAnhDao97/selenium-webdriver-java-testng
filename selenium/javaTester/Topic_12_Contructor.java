@@ -25,7 +25,7 @@ public class Topic_12_Contructor {
         // ko co kieu du lieu tra ve
         // trong 1 class co the co nhieu contructor
 
-        // neu minh define khi khoi tao no bat buoc p goi toi contructor minh define cho k goi den contructor rong nua
+        // neu minh define khi khoi tao no bat buoc p goi toi contructor minh define chu k goi den contructor rong nua
 
         // dai dien cho tinh da hinh thai
 
