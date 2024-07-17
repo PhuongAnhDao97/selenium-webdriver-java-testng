@@ -3,15 +3,15 @@ package javaTester;
 public class Topic_12_Contructor {
 
 
-    public Topic_12_Contructor (String name){
+    public Topic_12_Contructor(String name) {
         System.out.println(name);
     }
 
-    public Topic_12_Contructor (int age){
+    public Topic_12_Contructor(int age) {
         System.out.println(age);
     }
 
-    public Topic_12_Contructor (int age, String name){
+    public Topic_12_Contructor(int age, String name) {
         System.out.println(age + name);
     }
 
@@ -28,8 +28,6 @@ public class Topic_12_Contructor {
         // neu minh define khi khoi tao no bat buoc p goi toi contructor minh define chu k goi den contructor rong nua
 
         // dai dien cho tinh da hinh thai
-
-
 
 
         Topic_12_Contructor topic01 = new Topic_12_Contructor("ABC");

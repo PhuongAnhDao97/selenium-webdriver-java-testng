@@ -9,8 +9,8 @@ public class Topic_11_Array {
 
         // khia bao mang
         // mang 1 chieu
-        int number[] = {1,2,3,4,5,6,7};
-        int[] student ={1,2,3,4,5,6,7};
+        int number[] = {1, 2, 3, 4, 5, 6, 7};
+        int[] student = {1, 2, 3, 4, 5, 6, 7};
 
         // lay ra phan tu cua mang
         System.out.println(number[0]);
@@ -18,7 +18,7 @@ public class Topic_11_Array {
         System.out.println(number[6]);
 
 
-        String[] studentNames = {"An","Nam","Long"};
+        String[] studentNames = {"An", "Nam", "Long"};
         System.out.println(studentNames[2]);
 
         int b[] = new int[5];
@@ -38,9 +38,9 @@ public class Topic_11_Array {
 
 
         // truong hop dong
-        ArrayList<String> sdtName = new  ArrayList<String>();
+        ArrayList<String> sdtName = new ArrayList<String>();
 
-        for(String std : studentNames) {
+        for (String std : studentNames) {
             sdtName.add(std);
         }
 

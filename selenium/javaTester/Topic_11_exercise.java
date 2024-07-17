@@ -86,9 +86,9 @@ public class Topic_11_exercise {
         // bai 7
 
         Topic_11_exercise[] topic = new Topic_11_exercise[3];
-        topic[0] = new Topic_11_exercise(001,"Hoa",23, 8);
-        topic[1] = new Topic_11_exercise(002,"Tuan",13, 2);
-        topic[2] = new Topic_11_exercise(003,"Khanh",12, 10);
+        topic[0] = new Topic_11_exercise(001, "Hoa", 23, 8);
+        topic[1] = new Topic_11_exercise(002, "Tuan", 13, 2);
+        topic[2] = new Topic_11_exercise(003, "Khanh", 12, 10);
 
         for (int i = 0; i < 3; i++) {
             topic[i].display();
