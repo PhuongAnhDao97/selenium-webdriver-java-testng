@@ -22,7 +22,7 @@ public class Topic_05_This_Super extends Topic_00_Demo {
     }
 
     public void setImplicitWait(){
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(super.longTimeout));
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(super.longTimeout));
     }
 
     public static void main(String[] args) {
