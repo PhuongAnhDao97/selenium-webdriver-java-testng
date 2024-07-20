@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
-public class Topic_08_Handle_Exception {
+public class Topic_08_Exception_Type {
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
          //complier time > checked exception
          //String fullName = 15;
